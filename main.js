@@ -2,7 +2,7 @@ const log = console.log
 
 
 
-
+/**@type {HTMLCanvasElement} */
 var cvs = document.getElementById('cvs')
 var ctx = cvs.getContext('2d')
 var btn = document.getElementById('btn')
@@ -28,7 +28,9 @@ var memWidth = 10
 
 var direction = 0
 
-document.getElementById('dir').addEventListener('change', e => {direction=e.srcElement.value})
+document.getElementById('dir').addEventListener('change', e => {
+    direction = e.srcElement.value
+})
 
 function loadfile(src) {
     if (src === undefined) {} else {
@@ -92,4 +94,12 @@ function makeCake() {
     for (let i = 0; i <= memWidth; i++) {
         ctx.drawImage(cakeSrcCvs, memWidth * dir[2] + i * dir[0], memWidth * dir[3] + i * dir[1])
     }
+}
+
+function download() {
+    var link = document.createElement('a')
+    link.download = 'mem-cake.png'
+    link.href = cvs.toDataURL('image/png')
+
+    link.click()
 }
