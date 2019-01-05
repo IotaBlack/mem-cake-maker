@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Mem-Cake</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js" defer></script>
+</head>
+<body>
+    <canvas id="cvs"></canvas>
+    <button id="btn">Cakeify!</button>
+    <select id="dir">
+        <option value="0">right-down</option>
+        <option value="1">down</option>
+        <option value="2">left-down</option>
+        <option value="3">left</option>
+        <option value="4">left-up</option>
+        <option value="5">up</option>
+        <option value="6">up-right</option>
+        <option value="7">right</option>
+    </select>
+    <input id="in" type="file" onchange="loadfile(this.files[0]);">
+</body>
+</html>
